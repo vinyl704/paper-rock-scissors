@@ -1,38 +1,76 @@
-.App {
+:root{
+  --primary-color:#556b2f;
+  --primary-text-color:#faebd7
+}
+
+#Header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: center;
+  align-self: center;
+  background-color: var(--primary-color);
+  border: 10px solid var(--primary-text-color);
+  margin:auto;
+  border-radius: 20px;
+  max-width: 85%;
+  padding:1em;
+}
+
+#Header>p{
   text-align: center;
+  width:30%;
+  margin: 25px auto;
+  color: var(--primary-text-color);
+  padding:10px;
+  border-bottom:3px dashed rgba(255,255,255, .4);
+  rotate: 1 2 3 30deg;
+  overflow: hidden;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#weaponSelect{
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#weapon-pic{
+  place-items: center;
+  width: 100px;
+  height: 100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+.weapon{
+  width:200px;
+  height:200px;
+  display:flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--primary-text-color);
+  justify-content: center;
+  align-content: center;
+}
+
+#scoreboard{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+tr{
+  display: flex;
+  margin:auto;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+tbody{
+  display: flex;
+  flex-direction: column;
+}
+td{
+  padding:10px;
+  margin: 0 20px;
 }
