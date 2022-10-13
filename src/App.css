@@ -1,40 +1,60 @@
 :root{
-  --primary-color:#556b2f;
-  --primary-text-color:#faebd7
+  --primary-color:#41463d;
+  --primary-text-color:#9d8df1;
+}
+
+.App{
+  background-color: var(--primary-color);
+  min-height: 100vh;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 #Header{
+  top:15px;
+  box-sizing: content-box;
+  position:relative;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-self: center;
   align-self: center;
   background-color: var(--primary-color);
-  border: 10px solid var(--primary-text-color);
-  margin:auto;
+  border: 5px solid var(--primary-text-color);
+  margin: 0 auto 30px auto;
   border-radius: 20px;
   max-width: 85%;
-  padding:1em;
+  padding: 10px;
+  overflow: hidden;
+  background-color: #9d8df1;
+  background-blend-mode: multiply;
 }
 
 #Header>p{
   text-align: center;
   width:30%;
-  margin: 25px auto;
+  margin: 10px auto;
   color: var(--primary-text-color);
   padding:10px;
-  border-bottom:3px dashed rgba(255,255,255, .4);
-  rotate: 1 2 3 30deg;
-  overflow: hidden;
+  rotate: 1 2 3 20deg;
+  overflow:auto;
+  font-size:2em;
+  background-color: #CFD2B2;
 }
 
 #weaponSelect{
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
+  color:#CFD2B2
 }
 
-#weapon-pic{
+svg{
+  color:black;
+  width: 100px;
+  height: 100px;
+}
+
+.weapon-pic{
   place-items: center;
   width: 100px;
   height: 100px;
@@ -58,19 +78,66 @@
 #scoreboard{
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  
+}
+
+table{
+  display:flex;
 }
 
 tr{
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   margin:auto;
+  justify-content: space-between;
+  align-items:flex-start;
+  text-align: center;
 }
 tbody{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-td{
-  padding:10px;
-  margin: 0 20px;
+td,th{
+  margin: 25px 10px;
+  text-align: center;
 }
+
+#reset{
+  background:#4c9f70;
+}
+
+.player-display{
+  font-size: 2em;
+}
+
+/*
+ 
+  CSV 
+41463d,9d8df1,b8cdf8,4c9f70,cfd2b2
+
+ With # 
+#41463d, #9d8df1, #b8cdf8, #4c9f70, #cfd2b2
+
+Array 
+["41463d","9d8df1","b8cdf8","4c9f70","cfd2b2"]
+
+Object
+{"Black Olive":"41463d","Medium Purple":"9d8df1","Light Steel Blue":"b8cdf8","Shiny Shamrock":"4c9f70","Pale Spring Bud":"cfd2b2"}
+
+Extended Array
+[{"name":"Black Olive","hex":"41463d","rgb":[65,70,61],"cmyk":[7,0,13,73],"hsb":[93,13,27],"hsl":[93,7,26],"lab":[29,-4,5]},{"name":"Medium Purple","hex":"9d8df1","rgb":[157,141,241],"cmyk":[35,41,0,5],"hsb":[250,41,95],"hsl":[250,78,75],"lab":[64,29,-48]},{"name":"Light Steel Blue","hex":"b8cdf8","rgb":[184,205,248],"cmyk":[26,17,0,3],"hsb":[220,26,97],"hsl":[220,82,85],"lab":[82,2,-23]},{"name":"Shiny Shamrock","hex":"4c9f70","rgb":[76,159,112],"cmyk":[52,0,30,38],"hsb":[146,52,62],"hsl":[146,35,46],"lab":[59,-36,17]},{"name":"Pale Spring Bud","hex":"cfd2b2","rgb":[207,210,178],"cmyk":[1,0,15,18],"hsb":[66,15,82],"hsl":[66,26,76],"lab":[83,-6,16]}]
+
+XML
+<palette>
+  <color name="Black Olive" hex="41463d" r="65" g="70" b="61" />
+  <color name="Medium Purple" hex="9d8df1" r="157" g="141" b="241" />
+  <color name="Light Steel Blue" hex="b8cdf8" r="184" g="205" b="248" />
+  <color name="Shiny Shamrock" hex="4c9f70" r="76" g="159" b="112" />
+  <color name="Pale Spring Bud" hex="cfd2b2" r="207" g="210" b="178" />
+</palette>
+*/

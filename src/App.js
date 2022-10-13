@@ -6,20 +6,23 @@ import Scoreboard from "./components/Scoreboard";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
-  const weapons = 
-    { "paper":"rock",
-     "rock":"scissors" ,
-    "scissors":"paper" }
-  ;
+
 
  
+
   
-  const [start, setStart] = useState(false);
   const [score1, setScore1] = useState(0);
   const [score2, setScore2] = useState(0);
+  const[choiceOutput,setChoiceOutput] = useState('')
+  const [activePlayer, setActivePlayer] = useState(1);
 
-  const NUMBER_OF_ROUNDS = 5;
 
+  const resetHandler = () =>{
+    setScore1(0)
+    setScore2(0)
+    setChoiceOutput(null)
+    setActivePlayer(1)
+  }
   // //gameloop
   // const startGame = (e)=>{
   //   e.preventDefault()
@@ -37,19 +40,21 @@ function App() {
       <Header />
       <Scoreboard score1={score1} score2={score2}/>
       <WeaponSelect
-        weapons={weapons}
-
-        
         setScore1 = {setScore1}
         setScore2 = {setScore2}
         score1 = {score1}
         score2 = {score2}
-      />
+        choiceOutput={choiceOutput}
+        setChoiceOutput = {setChoiceOutput}
+        activePlayer={activePlayer}
+        setActivePlayer={setActivePlayer}
+      >
       <div className="d-flex mt-5 justify-content-center align-items-center">
-        <button className="btn btn-lg btn-success text-center">
-          Start
+        <button id="reset" className="btn btn-lg text-center" onClick={resetHandler}>
+          Reset
         </button>
       </div>
+      </WeaponSelect>
     </div>
   );
 }

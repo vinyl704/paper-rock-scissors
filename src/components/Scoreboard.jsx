@@ -1,5 +1,6 @@
 export default function Scoreboard(props){
     //console.log(props)
+    const {score1,score2} = props;
     return(
         <table id="scoreboard">
             <thead>
@@ -10,8 +11,8 @@ export default function Scoreboard(props){
             </thead>
             <tbody>
                 <tr>
-                    <td>{props.score1}</td>
-                    <td>{props.score2}</td>
+                    <td>{score1}</td>
+                    <td>{score2}</td>
                 </tr>
             </tbody>
         </table>
