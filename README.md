@@ -1,6 +1,7 @@
 # Paper, rock, Scissors
+## Or whatever you wanna call it
+### [Play](https://vinyl704.github.io/paper-rock-scissors/)
 
-### Or whatever you wanna call it
 
 - 2 players, local only
 - Playing against computer to be added
