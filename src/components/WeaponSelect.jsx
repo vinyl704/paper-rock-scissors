@@ -10,29 +10,28 @@ export default function WeaponSelect(props) {
     score1,
     score2,
     activePlayer,
-    setActivePlayer
+    setActivePlayer,
+    gameLength,
   } = props;
 
   const [playerOneChoice, setPlayerOneChoice] = useState(null);
   const [playerTwoChoice, setPlayerTwoChoice] = useState(null);
-  console.log("active player = ", activePlayer);
 
   const weapons = { paper: "rock", rock: "scissors", scissors: "paper" };
-  console.log(this);
 
-  const gameOver = score1 === 5 || score2 === 5;
+  const gameOver = score1 === gameLength || score2 === gameLength;
   useEffect(() => {
     if (playerOneChoice && playerTwoChoice) {
       if (!gameOver) {
         if (playerTwoChoice === weapons[playerOneChoice]) {
           setScore1((prevScore) => prevScore + 1);
-          if (score1 !== 5)
+          if (score1 !== gameLength)
             setChoiceOutput(
               `Player one wins!  Player One chose ${playerOneChoice}, Player two chose ${playerTwoChoice}`
             );
         } else if (playerOneChoice === weapons[playerTwoChoice]) {
           setScore2((prevScore) => prevScore + 1);
-          if (score2 !== 5)
+          if (score2 !== gameLength)
             setChoiceOutput(
               `Player two wins!  Player Two chose ${playerTwoChoice}, Player one chose ${playerOneChoice}`
             );
@@ -46,16 +45,16 @@ export default function WeaponSelect(props) {
       setPlayerOneChoice(null);
       setPlayerTwoChoice(null);
     }
-    if (score1 === 5 || score2 === 5)
+    if (score1 === gameLength || score2 === gameLength)
       setChoiceOutput(
-        score1 === 5
+        score1 === gameLength
           ? "Player One Wins, better luck next time scrub!!!"
           : "Player Two Wins, better luck next time scrub!!!"
       );
   });
 
   const play = (weapon) => {
-    if (score1 < 5 && score2 < 5) {
+    if (score1 < gameLength && score2 < gameLength) {
       //console.log(weapon)
 
       if (activePlayer === 2) {
@@ -72,7 +71,11 @@ export default function WeaponSelect(props) {
     <>
       {!gameOver && (
         <div className="player-display text-center">
-          Player <span className={activePlayer===1?"text-warning":"text-danger"}>{activePlayer}</span>, choose your weapon
+          Player{" "}
+          <span className={activePlayer === 1 ? "text-warning" : "text-danger"}>
+            {activePlayer}
+          </span>
+          , choose your weapon
         </div>
       )}
       <div className="text-center bold">{choiceOutput}</div>

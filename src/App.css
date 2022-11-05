@@ -1,18 +1,18 @@
-:root{
-  --primary-color:#41463d;
-  --primary-text-color:#9d8df1;
+:root {
+  --primary-color: #41463d;
+  --primary-text-color: #9d8df1;
 }
 
-.App{
+.App {
   background-color: var(--primary-color);
   min-height: 100vh;
   font-family: Helvetica, Arial, sans-serif;
 }
 
-#Header{
-  top:15px;
+#Header {
+  top: 15px;
   box-sizing: content-box;
-  position:relative;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -29,43 +29,41 @@
   background-blend-mode: multiply;
 }
 
-#Header>p{
+#Header > p {
   text-align: center;
-  width:30%;
+  width: 30%;
   margin: 10px auto;
   color: var(--primary-text-color);
-  padding:10px;
+  padding: 10px;
   rotate: 1 2 3 20deg;
-  overflow:auto;
-  font-size:2em;
-  background-color: #CFD2B2;
+  overflow: auto;
+  font-size: 2em;
+  background-color: #cfd2b2;
 }
 
-#weaponSelect{
+#weaponSelect {
   display: flex;
   justify-content: space-evenly;
   margin-top: 30px;
-  color:#CFD2B2
+  color: #cfd2b2;
 }
 
-svg{
-  color:black;
+svg {
+  color: black;
   width: 100px;
   height: 100px;
 }
 
-.weapon-pic{
+.weapon-pic {
   place-items: center;
   width: 100px;
   height: 100px;
 }
 
-
-
-.weapon{
-  width:200px;
-  height:200px;
-  display:flex;
+.weapon {
+  width: 200px;
+  height: 200px;
+  display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   text-align: center;
@@ -75,43 +73,43 @@ svg{
   align-content: center;
 }
 
-#scoreboard{
+#scoreboard {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  
 }
 
-table{
-  display:flex;
+table {
+  display: flex;
 }
 
-tr{
+tr {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin:auto;
+  margin: auto;
   justify-content: space-between;
-  align-items:flex-start;
+  align-items: flex-start;
   text-align: center;
 }
-tbody{
+tbody {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
 }
-td,th{
+td,
+th {
   margin: 25px 10px;
   text-align: center;
 }
 
-#reset{
-  background:#4c9f70;
+#reset {
+  background: #4c9f70;
 }
 
-.player-display{
+.player-display {
   font-size: 2em;
 }
 
