@@ -1,7 +1,8 @@
 import React from "react";
+import { useEffect } from "react";
 import "../App.css";
 export default function Weapon(props) {
-  const { weapon, play } = props;
+  const { weapon, play, mode, activePlayer } = props;
   const rockPicUrl = (
     <p>
       <img
@@ -37,6 +38,10 @@ export default function Weapon(props) {
     scissors: ScissorsPicUrl,
     paper: PaperPicUrl,
   };
+  useEffect(() => {
+    if (mode === 1 && activePlayer === 2)
+      play(Object.keys(weaponPic)[Math.floor(Math.random() * 3)]);
+  }, [activePlayer]);
 
   return (
     <div className="weapon" key={weapon} onClick={() => play(weapon)}>
