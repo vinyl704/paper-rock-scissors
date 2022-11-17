@@ -12,6 +12,7 @@ export default function WeaponSelect(props) {
     activePlayer,
     setActivePlayer,
     gameLength,
+    mode,
   } = props;
 
   const [playerOneChoice, setPlayerOneChoice] = useState(null);
@@ -82,6 +83,8 @@ export default function WeaponSelect(props) {
       <div id="weaponSelect">
         {Object.keys(weapons).map((item) => (
           <Weapon
+            mode={mode}
+            activePlayer={activePlayer}
             play={play}
             key={item}
             weapon={item}
