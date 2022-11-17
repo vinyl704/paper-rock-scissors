@@ -21,6 +21,7 @@ function App() {
     setChoiceOutput(null);
     setActivePlayer(1);
     setGameRounds(5);
+    setMode(1)
   };
 
   return (
