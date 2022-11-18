@@ -21,17 +21,19 @@ function App() {
     setChoiceOutput(null);
     setActivePlayer(1);
     setGameRounds(5);
-    setMode(1)
+    setMode(1);
   };
 
   return (
     <div className="App">
       <Header />
-      <h3 className="text-center">First to {gameRounds}</h3>
-      <h4 className="text-center">
-        {mode === 1 ? "Player vs CPU" : "Player vs Player"}
-      </h4>
-      <Scoreboard score1={score1} score2={score2} />
+      <div className="stuff d-flex justify-content-center flex-column text-center">
+        <h3 className="text-center">First to {gameRounds}</h3>
+        <h4 className="text-center">
+          {mode === 1 ? "Player vs CPU" : "Player vs Player"}
+        </h4>
+        <Scoreboard score1={score1} score2={score2} />
+      </div>
       <WeaponSelect
         setScore1={setScore1}
         setScore2={setScore2}

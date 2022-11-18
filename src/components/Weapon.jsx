@@ -4,13 +4,11 @@ import "../App.css";
 export default function Weapon(props) {
   const { weapon, play, mode, activePlayer } = props;
   const rockPicUrl = (
-    <p>
-      <img
-        className="weapon-pic"
-        src="http://www.clker.com/cliparts/F/M/x/W/i/S/rock-rubble-hi.png"
-        alt={weapon}
-      />
-    </p>
+    <img
+      className="weapon-pic"
+      src="http://www.clker.com/cliparts/F/M/x/W/i/S/rock-rubble-hi.png"
+      alt={weapon}
+    />
   );
   const ScissorsPicUrl = (
     <svg
@@ -25,13 +23,11 @@ export default function Weapon(props) {
     </svg>
   );
   const PaperPicUrl = (
-    <p>
-      <img
-        className="weapon-pic"
-        src="https://cdn.onlinewebfonts.com/svg/img_548933.png"
-        alt={weapon}
-      />
-    </p>
+    <img
+      className="weapon-pic"
+      src="https://cdn.onlinewebfonts.com/svg/img_548933.png"
+      alt={weapon}
+    />
   );
   const weaponPic = {
     rock: rockPicUrl,

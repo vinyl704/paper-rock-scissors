@@ -3,9 +3,14 @@
   --primary-text-color: #9d8df1;
 }
 
+* {
+  margin: 0;
+}
+
 .App {
   background-color: var(--primary-color);
   min-height: 100vh;
+  width: 100%;
   font-family: Helvetica, Arial, sans-serif;
 }
 
@@ -14,6 +19,7 @@
   box-sizing: content-box;
   position: relative;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   justify-self: center;
@@ -29,21 +35,22 @@
   background-blend-mode: multiply;
 }
 
-#Header > p {
+#Header p {
   text-align: center;
   width: 30%;
   margin: 10px auto;
   color: var(--primary-text-color);
   padding: 10px;
   rotate: 1 2 3 20deg;
-  overflow: auto;
-  font-size: 2em;
+  overflow: hidden;
+  font-size: 1.6em;
   background-color: #cfd2b2;
 }
 
 #weaponSelect {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-top: 30px;
   color: #cfd2b2;
 }
@@ -63,6 +70,7 @@ svg {
 .weapon {
   width: 200px;
   height: 200px;
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
@@ -71,6 +79,7 @@ svg {
   background: var(--primary-text-color);
   justify-content: center;
   align-content: center;
+  margin: 0 25px;
 }
 
 #scoreboard {
@@ -78,31 +87,43 @@ svg {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  background-color: #fff;
+  border-radius: 30px;
+  opacity: 0.7;
 }
 
 table {
   display: flex;
+  margin: auto;
 }
 
 tr {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  margin: auto;
+  margin: 0 auto;
   justify-content: space-between;
   align-items: flex-start;
   text-align: center;
 }
 tbody {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
-td,
 th {
-  margin: 25px 10px;
-  text-align: center;
+  padding: 5px;
+  margin: 5px 20px;
+}
+.scores {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.scores > * {
+  margin: 0 50px;
+  font-size: 2em;
 }
 
 #reset {
@@ -111,6 +132,34 @@ th {
 
 .player-display {
   font-size: 2em;
+}
+@media screen and (max-width: 540px) {
+  .stuff,
+  #weaponSelect {
+    scale: 0.8;
+  }
+
+  .weapon,
+  .weapon-pic {
+    margin: 3px 7px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .stuff,
+  #weaponSelect {
+    scale: 0.8;
+  }
+
+  .weapon,
+  .weapon-pic {
+    margin: 3px 5px;
+    max-width: 150px;
+    min-width: 100px;
+  }
+
+  #Header p {
+    font-size: 1em;
+  }
 }
 
 /*
