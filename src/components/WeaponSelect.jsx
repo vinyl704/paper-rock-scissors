@@ -20,7 +20,7 @@ export default function WeaponSelect(props) {
 
   const weapons = { paper: "rock", rock: "scissors", scissors: "paper" };
 
-  const gameOver = score1 === gameLength || score2 === gameLength;
+  const gameOver = score1 === Number(gameLength) || score2 === Number(gameLength);
   useEffect(() => {
     if (playerOneChoice && playerTwoChoice) {
       if (!gameOver) {
@@ -46,9 +46,9 @@ export default function WeaponSelect(props) {
       setPlayerOneChoice(null);
       setPlayerTwoChoice(null);
     }
-    if (score1 === gameLength || score2 === gameLength)
+    if (score1 === Number(gameLength) || score2 === Number(gameLength))
       setChoiceOutput(
-        score1 === gameLength
+        score1 === Number(gameLength)
           ? "Player One Wins, better luck next time scrub!!!"
           : "Player Two Wins, better luck next time scrub!!!"
       );
